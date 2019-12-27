@@ -1,0 +1,32 @@
+.timer{
+    position: relative;
+    display: inline-block;
+}
+.dial{
+    height: 500px;
+    width: 500px;
+}
+.timer input {
+    border: none;
+    width: 300px;
+    text-align: center;
+    font-size: 120px;
+}
+input:focus{
+      outline: none;
+}
+.timer button{
+    border: none;
+    font-size: 48px;
+}
+.controls{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
