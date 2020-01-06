@@ -13,12 +13,12 @@ fs.readdir(process.cwd(), async (err,filenames)=>{
         console.log(err);
         return err;
     }
-    for(let filename of filenames){
-        const stats = await lstat(filename);
-
-        console.log(filename,stats.isFile())
+    const allPromises = filenames.map(filename => (lstat(filename)))
+    const stats = await allPromises;
+    for(let stat of stats){
+        const index = stats.indexOf(stat)
+        console.log(filenames[index],(await stat).isFile())
     }
-  
 })
 // Method #1
 // const lstat = (filename)=>{
